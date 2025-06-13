@@ -5,7 +5,11 @@ Welcome to an innovative ABAP ETL template designed to revolutionize how you han
 <br>
 
 ## 🎖️ The Medallion Architecture: A Data Story
-Imagine your data as a precious metal, progressively refined through distinct stages. That's the essence of the Medallion Architecture, a powerful concept borrowed from data lake strategies. Here, we break down your data journey into three key layers:
+Imagine your data as a precious metal, progressively refined through distinct stages. That's the essence of the Medallion Architecture, a powerful concept borrowed from data lake strategies. 
+
+![Medallion](Images/medallion.png)
+
+Here, we break down your data journey into three key layers:
 * **Bronze Layer (Raw & Unfiltered):** Your data's first stop – raw, untouched, and in its original glory. Minimal processing, maximum preservation.
 * **Silver Layer (Clean & Refined):** Time to polish! Here, Bronze data gets cleansed, transformed, and integrated, becoming consistent and ready for analysis.
 * **Gold Layer (Curated & Ready-to-Use):** (Conceptual in this template!) The purest form of your data – highly curated, aggregated, and optimized for consumption by BI tools, analytics, or services like Fiori apps.
@@ -21,7 +25,7 @@ The data then moves to the **Silver layer**, orchestrated by the [zetlcl_to_silv
 
 ## 🏗️ Unpacking the Architecture: How it All Comes Together
 This template offers a clear, modular structure for your ETL pipeline.
-
+![solution](Images/etl-abap.drawio.svg)
 ### 📥 Bronze Layer Loading: Your Data's Entry Point
 Once data is in Bronze, how do we get it out for the next stage? That's where our "bronze_lector" classes come in! They implement the [zetlif_bronze_lector](Src/Interfaces/zetlif_broze_lector.abap) interface, whose primary role is to provide a standardized way to inject dependencies for data selection. These specialized classes are solely responsible for reading data from a CDS view that directly queries your Bronze source. It's a clean, efficient way to access your raw data when you need it.
 
