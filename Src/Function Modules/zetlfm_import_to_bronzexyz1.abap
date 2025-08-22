@@ -9,7 +9,7 @@ FUNCTION zetlfm_import_to_bronzexyz1.
     lv_table_name  TYPE tabname16.
        
   IF lines( it_input_data[] ) GE 1.
-    lv_table = zcl_etl_process_handler =>tbl_target_xyz_1.    
+    lv_table = zcl_etl_process_handler=>tbl_target_xyz_1.    
   ELSE.
         RETURN.
   ENDIF.
@@ -18,7 +18,7 @@ FUNCTION zetlfm_import_to_bronzexyz1.
   ASSIGN lt_table_ref->* TO FIELD-SYMBOL(<lt_data>).
   <lt_data> = it_input_data[].
 
-  CALL METHOD zcl_etl_process_handler =>load_and_process_data
+  CALL METHOD zcl_etl_process_handler=>load_and_process_data
     EXPORTING
       iv_table       = lv_table
       it_data        = lt_table_ref
